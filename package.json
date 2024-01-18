@@ -1,41 +1,44 @@
 {
-  "name": "react three fiber",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.jsx",
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@react-three/fiber": "8.15.13",
-    "react": "18.2.0",
-    "gh-pages": "^6.1.1",
-    "react-dom": "18.2.0",
-    "react-scripts": "5.0.1",
-    "three": "0.160.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "dependencies": {
-    "@react-three/drei": "^9.93.0",
-    "@react-three/postprocessing": "^2.15.11",
-    "@react-three/rapier": "^1.2.1",
-    "r3f-perf": "^7.1.2",
-    "zustand": "^4.4.7"
-  }
+   "homepage": "http://subhanashraf.github.io/Game_3d",
+   "name": "react three fiber",
+   "version": "1.0.0",
+   "description": "",
+   "keywords": [],
+   "main": "src/index.jsx",
+   "devDependencies": {
+      "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+      "@react-three/fiber": "8.15.13",
+      "gh-pages": "^6.1.1",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-scripts": "5.0.1",
+      "three": "0.160.0"
+   },
+   "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+   },
+   "browserslist": {
+      "production": [
+         ">0.2%",
+         "not dead",
+         "not op_mini all"
+      ],
+      "development": [
+         "last 1 chrome version",
+         "last 1 firefox version",
+         "last 1 safari version"
+      ]
+   },
+   "dependencies": {
+      "@react-three/drei": "^9.93.0",
+      "@react-three/postprocessing": "^2.15.11",
+      "@react-three/rapier": "^1.2.1",
+      "r3f-perf": "^7.1.2",
+      "zustand": "^4.4.7"
+   }
 }

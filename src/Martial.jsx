@@ -30,14 +30,14 @@ function Startfloor({ position = [0, 0, 0] }) {
 
 
 function Endfloor({ position = [0, 0, 0] }) {
-    const object = useGLTF('./hamburger.glb')
-    
     
     return <>
         <mesh geometry={box} scale={[4, 0.2, 4]} material={startfloor} position={[position[0], position[1] , position[2] ]} receiveShadow  ></mesh>
         <mesh geometry={box} scale={[0.2, 1.5, 4]} castShadow material={wal} position={[position[0], position[1] + 0.75, position[2] + 2]} rotation={[0, Math.PI * 1.5, 0]} ></mesh>
         <RigidBody colliders='hull' type='fixed' >
-            <primitive object={object.scene} scale={0.2} position={position} />
+            <Text color='#305420' position={[position[0], position[1] +1 , position[2]]} scale={0.5}  rotation={[0,Math.PI *1,0]}>
+            Finish
+            </Text>
         </RigidBody>
     <CuboidCollider args={[0.2, 1, 2]}  position={[position[0], position[1] + 0.75, position[2] + 2]}  rotation={[0, Math.PI * 1.5, 0]} friction={5} restitution={0} ></CuboidCollider>
     </>
