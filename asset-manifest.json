@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Game_3d/static/css/main.80b6e3ca.css",
-    "main.js": "/Game_3d/static/js/main.1bc58406.js",
+    "main.js": "/Game_3d/static/js/main.d5547a8e.js",
     "index.html": "/Game_3d/index.html",
     "main.80b6e3ca.css.map": "/Game_3d/static/css/main.80b6e3ca.css.map",
-    "main.1bc58406.js.map": "/Game_3d/static/js/main.1bc58406.js.map"
+    "main.d5547a8e.js.map": "/Game_3d/static/js/main.d5547a8e.js.map"
   },
   "entrypoints": [
     "static/css/main.80b6e3ca.css",
-    "static/js/main.1bc58406.js"
+    "static/js/main.d5547a8e.js"
   ]
 }
