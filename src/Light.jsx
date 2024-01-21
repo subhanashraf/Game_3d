@@ -5,9 +5,6 @@ export default function Light(params) {
 
     const light = useRef()
     useFrame((state,delta)=>{
-        // light.current.position =state.camera.position
-        // console.log(light.current.position);
-        // console.log(state.camera.position);
         light.current.position.z =state.camera.position.z -1
         light.current.target.position.z =state.camera.position.z
         
@@ -16,7 +13,7 @@ export default function Light(params) {
     return(
         <>
         <ambientLight  intensity={1.5}/>
-        <directionalLight ref={light}  intensity={3}  castShadow >
+        <directionalLight ref={light}  intensity={2.5}  castShadow >
         </directionalLight>
         </>
     )

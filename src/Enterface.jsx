@@ -6,7 +6,7 @@ import { addEffect } from '@react-three/fiber'
 export default function Enterface()
 {
     const time = useRef()
-
+    const out = useRef()
     const restart = useGame((state) => state.restart)
     const phase = useGame((state) => state.phase)
 
@@ -35,7 +35,6 @@ export default function Enterface()
             if(time.current)
                 time.current.textContent = elapsedTime
         })
-
         return () =>
         {
             unsubscribeEffect()
@@ -47,8 +46,8 @@ export default function Enterface()
         <div ref={ time } className="time">0.00</div>
 
         { phase === 'ended' && <div className="restart" onClick={ restart }>Restart</div> }
+     
 
- 
         <div className="controls">
             <div className="raw">
                 <div className={ `key ${ forward ? 'active' : '' }` }></div>

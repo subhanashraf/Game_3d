@@ -5,12 +5,13 @@ import { Perf } from 'r3f-perf'
 import { useMemo, useRef, useState } from 'react'
 import *as THREE from 'three'
 
+THREE.ColorManagement.legacyMode = false;
 
 const box = new THREE.BoxGeometry(1, 1, 1)
-let startfloor = new THREE.MeshStandardMaterial({color: '#435c47' })
-let midfloor = new THREE.MeshStandardMaterial({ color: '#4f5655', })
-let trap = new THREE.MeshStandardMaterial({color: '#ff0000', metalness: 0, roughness: 1})
-let wal = new THREE.MeshStandardMaterial({ color: '#887777', metalness: 0, roughness: 0 })
+let startfloor = new THREE.MeshStandardMaterial({color: '#111111', metalness: 0.3, roughness: 1})
+let midfloor = new THREE.MeshStandardMaterial({color: '#222222', metalness: 0, roughness: 0 })
+let trap = new THREE.MeshStandardMaterial({color: '#ff0000', metalness: 0.2, roughness: 0.5})
+let wal = new THREE.MeshStandardMaterial({ color: '#887777', metalness: 0.2, roughness: 0.1 })
 
 
 
@@ -19,9 +20,8 @@ function Startfloor({ position = [0, 0, 0] }) {
     return (
         <>
         <mesh geometry={box} scale={[4, 0.2, 4]} material={startfloor} position={position} receiveShadow />
-        <Text color='black' position={[0,1,1]} scale={0.5}  rotation={[-1,Math.PI *1,0]}>
+        <Text color='#ffffff' position={[0,1,1]} scale={0.5}  rotation={[-1,Math.PI *1,0]}>
              Start Game
-             <meshNormalMaterial/>
              </Text>
         </>
     );
@@ -32,13 +32,11 @@ function Startfloor({ position = [0, 0, 0] }) {
 function Endfloor({ position = [0, 0, 0] }) {
     
     return <>
-        <mesh geometry={box} scale={[4, 0.2, 4]} material={startfloor} position={[position[0], position[1] , position[2] ]} receiveShadow  ></mesh>
-        <mesh geometry={box} scale={[0.2, 1.5, 4]} castShadow material={wal} position={[position[0], position[1] + 0.75, position[2] + 2]} rotation={[0, Math.PI * 1.5, 0]} ></mesh>
-        <RigidBody colliders='hull' type='fixed' >
-            <Text color='#305420' position={[position[0], position[1] +1 , position[2]]} scale={0.5}  rotation={[0,Math.PI *1,0]}>
+        <mesh geometry={box} scale={[4, 0.2, 4]} material={startfloor} position={[position[0], position[1]+0.15 , position[2] ]}  receiveShadow  ></mesh>
+        <mesh geometry={box} scale={[0.2, 1.5, 4]} castShadow material={wal} position={[position[0], position[1] +0.75, position[2] + 2]} rotation={[0, Math.PI * 1.5, 0]} ></mesh>
+            <Text color='#ffffff' position={[position[0], position[1] +1 , position[2]]} scale={0.5}  rotation={[0,Math.PI *1,0]}>
             Finish
             </Text>
-        </RigidBody>
     <CuboidCollider args={[0.2, 1, 2]}  position={[position[0], position[1] + 0.75, position[2] + 2]}  rotation={[0, Math.PI * 1.5, 0]} friction={5} restitution={0} ></CuboidCollider>
     </>
 }
